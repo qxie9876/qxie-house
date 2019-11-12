@@ -1,10 +1,9 @@
 import re
 import os
 import subprocess
-
-#计算autodock的local score 
+# 对195个蛋白和配体已知pose进行计算
+# 计算autodock的local score 
 filenames = os.listdir()
-
 def runcmd(command):
     ret = subprocess.run(command)
     if ret.returncode == 0:
