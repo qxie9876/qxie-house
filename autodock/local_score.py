@@ -2,6 +2,7 @@ import re
 import os
 import subprocess
 
+#计算autodock的local score 
 filenames = os.listdir()
 
 filenames = os.listdir(path)
