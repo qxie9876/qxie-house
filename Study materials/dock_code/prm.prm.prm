@@ -1,0 +1,30 @@
+RBT_PARAMETER_FILE_V1.00              
+TIRLE 1bcu              
+RECEPTOR_FILE   protein/1bcu_protein.mol2              
+RECEPTOR_TOPOL_FILE   protein/1bcu.psf              
+RECEPTOR_COORD_FILE   protein/1bcu.crd              
+RECEPTOR_FLEX 3.0              
+RECEPTOR_DIHEDRAL_STEP 10.0              
+#此处对Ligand进行设置，此为刚性对接的参数，二面角固定
+SECTION LIGAND              
+        TRANS_MODE FREE              
+        ROT_MODE FREE              
+        DIHEDRAL_MODE FIXED              
+END_SECTION              
+#此处设置的是口袋的参数
+SECTION MAPPER              
+        SITE_MAPPER RbtLigandSiteMapper              
+        VOL_INCR 0.0              
+        GRIDSTEP 0.5              
+        RADIUS 6.0              
+        REF_MOL  ligand/1bcu_ligand.sd              
+        SMALL_SPHERE 1.0              
+        TRACE 1              
+        MIN_VOLUME 100              
+        MAX_CAVITIES 1              
+END_SECTION              
+
+SECTION CAVITY              
+        SCORING_FUNCTION        RbtCavityGridSF              
+        WEIGHT                  1.0              
+END_SECTION
